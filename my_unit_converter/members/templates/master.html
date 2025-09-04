@@ -1,15 +1,35 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" href="{% static 'myfirst.css' %}">
-	<head>
-		<title>
-			{% block title %}
-			{% endblock %}
-		</title>
-	</head>
+	<h1> {% block h1 %} {% endblock %} </h1>
 	<body>
 		{% block content %}
+		Enter the Unit Amount
+		<input type='number' name='unit_amount'/>
+		<br>
+		<br>
+
+		Unit to Convert from
+		<select name='from_unit'>
+			{% for unit in unit_measurements %}
+			<option>{{unit}}</option>
+			{% endfor %}
+		</select>
+		<br>
+		<br>
+
+		Unit to Convert to
+		<select name='to_unit'>
+			{% for unit in unit_measurements %}
+			<option>{{unit}}</option>
+			{% endfor %}
+		</select>
 		{% endblock %}
 	</body>
+
+	<footer> 
+		{% block footer %} 
+			<button>Convert</button> 
+		{% endblock %} 
+	</footer>
+
 </html>
