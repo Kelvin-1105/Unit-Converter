@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
+	<link rel="stylesheet" href="{% static 'myfirst.css' %}">
 	<h1> {% block h1 %} {% endblock %} </h1>
 
 	<h3> {% block links %} {% endblock%} </h3>
